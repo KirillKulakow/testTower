@@ -1,8 +1,13 @@
 @import 'styles/reset.sass'
+@import 'styles/variables.sass'
+
+body
+  font-family: $font-stack
 
 .app__background
   background: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), url('./assets/bg-img.jpg') no-repeat
-  height: 100vh
+  min-height: 100vh
+  height: 100%
   width: 100vw
   background-size: cover
   background-position: center

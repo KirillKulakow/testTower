@@ -1,0 +1,24 @@
+@import '../../styles/mixins.sass'
+@import '../../styles/variables.sass'
+
+.pagination
+    +flexX(center)
+    &__container
+        +flexX(center)
+    
+.pagination__btn
+    background-color: transparent
+    border: none
+    cursor: pointer
+    border: 1px solid transparent
+
+    &:disabled
+        border-color: #000
+        border-radius: 5px
+        background-color: $main-color
+        color: #fff
+    &:hover
+        border-color: #000
+        border-radius: 5px
+        background-color: rgba(69, 78, 255, 0.5)
+        color: #000

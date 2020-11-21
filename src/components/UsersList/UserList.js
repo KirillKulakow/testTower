@@ -1,14 +1,24 @@
 import React from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
+import Pagination from '../Pagination/Pagination'
+import './UserList.sass'
 
 const UserList = () => {
-    const { pages, currentPage, allPages } = useSelector(s => s)
-    const dispatch = useDispatch()
+    const { pages, currentPage } = useSelector(s => s)
     return (
-        <div className='user_list_container'>
+        <div>
             <ul>
-                {}
+                {pages[currentPage - 1].map((element, index) => (
+                    <li key={index} className='user_item'>
+                        <div className='name_container'>
+                            <h3>{`Name: ${element.name}`}</h3>
+                            <h3>{`Surname: ${element.surname}`}</h3>
+                        </div>
+                        <p>{`Description: ${element.desc}`}</p>
+                    </li>
+                ))}
             </ul>
+            <Pagination/>
         </div>
     )
 }
